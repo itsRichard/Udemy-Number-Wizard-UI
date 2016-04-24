@@ -16,12 +16,14 @@ public class NumberWizard : MonoBehaviour {
 	}
 	
 	void StartGame () {
-		max = max + 1;
+		max = 1000;
+		min = 1;
+		NextGuess ();
 	}
 	
 	void NextGuess () 
 	{
-		guess = (max + min) / 2;
+		guess = Random.Range (min,max+1);
 		text.text = guess.ToString();
 		maxGuessesAllowed = maxGuessesAllowed - 1;
 		if (maxGuessesAllowed<=0){
